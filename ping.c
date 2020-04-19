@@ -132,9 +132,9 @@ int unpack_icmp(char *buf, int len) {
         tvsend = (struct timeval*)icmp->icmp_data;
         tv_sub(&tvrecv, tvsend); 
         rtt = tvrecv.tv_sec * 1000+tvrecv.tv_usec / 1000;
-           
-        printf("%d byte from %s: icmp_seq=%u ttl=%d rtt=%.3f ms\n", len,
-        inet_ntoa(from.sin_addr), icmp->icmp_seq, ip->ip_ttl, rtt);
+        int packets_lost = nsend - nreceived-1;
+        printf("%d byte from %s: icmp_seq=%u packets_lost=%d ttl=%d rtt=%.3f ms\n", len,
+        inet_ntoa(from.sin_addr), icmp->icmp_seq, packets_lost, ip->ip_ttl, rtt);
     }
 
     else {
