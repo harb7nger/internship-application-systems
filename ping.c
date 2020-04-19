@@ -14,11 +14,9 @@
 #include <setjmp.h>
 #include <errno.h>
 
-#define PACKET_SIZE     4096
+#define PACKET_SIZE   4096
 
 #define MAX_WAIT_TIME   5
-
-#define MAX_NO_PACKETS  3
 
 char sendpacket[PACKET_SIZE];
 
@@ -126,20 +124,17 @@ int unpack_icmp(char *buf, int len) {
     len -= ip_header_len; 
 
     if (len < 8) {
-
         printf("the length of the packet is less than 8\n");
         return  - 1;
     } 
 
     if ((icmp->icmp_type == ICMP_ECHOREPLY) && (icmp->icmp_id == pid)) {
-
         tvsend = (struct timeval*)icmp->icmp_data;
         tv_sub(&tvrecv, tvsend); 
         rtt = tvrecv.tv_sec * 1000+tvrecv.tv_usec / 1000;
            
         printf("%d byte from %s: icmp_seq=%u ttl=%d rtt=%.3f ms\n", len,
         inet_ntoa(from.sin_addr), icmp->icmp_seq, ip->ip_ttl, rtt);
-
     }
 
     else {
@@ -165,17 +160,14 @@ void recieve_packet() {
     signal(SIGALRM, stats);
     fromlen = sizeof(from);
 
-
     alarm(MAX_WAIT_TIME);
     if ((n = recvfrom(sockfd, recvpacket, sizeof(recvpacket), 0, 
     	(struct sockaddr*) &from, &fromlen)) < 0) {
 			if (errno == EINTR) {
                 return;
 			}
-
         perror("error in packet receive");
         return;
-
     } gettimeofday(&tvrecv, NULL); 
 
     if (unpack_icmp(recvpacket, n) ==  - 1) {
@@ -207,8 +199,9 @@ int main(int argc, char *argv[]) {
 
         printf("usage:%s hostname|IP address\n", argv[0]);
         exit(1);
+    } 
 
-    } if ((protocol = getprotobyname("icmp")) == NULL) {
+    if ((protocol = getprotobyname("icmp")) == NULL) {
 
         perror("error in get protocol by name");
         exit(1);
@@ -236,6 +229,7 @@ int main(int argc, char *argv[]) {
         }
         memcpy((char*) &dest_addr.sin_addr, host->h_addr, host->h_length);
     } else {
+        
     	dest_addr.sin_addr.s_addr = inet_addr(argv[1]);
     }
 
