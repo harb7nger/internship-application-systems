@@ -42,26 +42,27 @@ Packet loss and latency should be reported as each message received.
 
 ## Sample
 `
-harb7nger@harb7nger:~/git/internship-application-systems$ sudo ./ping google.com
-[sudo] password for harb7nger: 
-PING google.com(172.217.0.14): 56 bytes of data in ICMP packets.
-64 byte from 172.217.0.14: icmp_seq=1 ttl=53 rtt=1000.000 ms
-64 byte from 172.217.0.14: icmp_seq=2 ttl=53 rtt=1000.000 ms
-64 byte from 172.217.0.14: icmp_seq=3 ttl=53 rtt=1000.000 ms
-64 byte from 172.217.0.14: icmp_seq=4 ttl=53 rtt=1000.000 ms
-64 byte from 172.217.0.14: icmp_seq=5 ttl=53 rtt=1000.000 ms
-^C
---------------------statistics-------------------
-6 transmitted, 5 received , %0 lost
-harb7nger@harb7nger:~/git/internship-application-systems$ sudo ./ping 8.8.8.8
-PING 8.8.8.8(8.8.8.8): 56 bytes of data in ICMP packets.
-64 byte from 8.8.8.8: icmp_seq=1 ttl=53 rtt=1000.000 ms
-64 byte from 8.8.8.8: icmp_seq=2 ttl=53 rtt=1000.000 ms
-64 byte from 8.8.8.8: icmp_seq=3 ttl=53 rtt=1000.000 ms
-64 byte from 8.8.8.8: icmp_seq=4 ttl=53 rtt=1000.000 ms
-64 byte from 8.8.8.8: icmp_seq=5 ttl=53 rtt=1000.000 ms
-^C
---------------------statistics-------------------
-6 transmitted, 5 received , %0 lost
-harb7nger@harb7nger:~/git/internship-application-systems$ 
+harb7nger@harb7nger:~/git/internship-application-systems$ sudo ./ping
+google.com\n
+[sudo] password for harb7nger:\n 
+PING google.com(172.217.0.14): 56 bytes of data in ICMP packets.\n
+64 byte from 172.217.0.14: icmp_seq=1 ttl=53 rtt=1000.000 ms\n
+64 byte from 172.217.0.14: icmp_seq=2 ttl=53 rtt=1000.000 ms\n
+64 byte from 172.217.0.14: icmp_seq=3 ttl=53 rtt=1000.000 ms\n
+64 byte from 172.217.0.14: icmp_seq=4 ttl=53 rtt=1000.000 ms\n
+64 byte from 172.217.0.14: icmp_seq=5 ttl=53 rtt=1000.000 ms\n
+^C\n
+--------------------statistics-------------------\n
+6 transmitted, 5 received , %0 lost\n
+harb7nger@harb7nger:~/git/internship-application-systems$ sudo ./ping 8.8.8.8\n
+PING 8.8.8.8(8.8.8.8): 56 bytes of data in ICMP packets.\n
+64 byte from 8.8.8.8: icmp_seq=1 ttl=53 rtt=1000.000 ms\n
+64 byte from 8.8.8.8: icmp_seq=2 ttl=53 rtt=1000.000 ms\n
+64 byte from 8.8.8.8: icmp_seq=3 ttl=53 rtt=1000.000 ms\n
+64 byte from 8.8.8.8: icmp_seq=4 ttl=53 rtt=1000.000 ms\n
+64 byte from 8.8.8.8: icmp_seq=5 ttl=53 rtt=1000.000 ms\n
+^C\n
+--------------------statistics-------------------\n
+6 transmitted, 5 received , %0 lost\n
+harb7nger@harb7nger:~/git/internship-application-systems$\n 
 `
