@@ -1,17 +1,12 @@
 # Cloudflare Internship Application: Systems
 
-## What is it?
+## Problem statement?
 
 Please write a small Ping CLI application for MacOS or Linux.
 The CLI app should accept a hostname or an IP address as its argument, then send ICMP "echo requests" in a loop to the target while receiving "echo reply" messages.
 It should report loss and RTT times for each sent message.
 
 Please choose from among these languages: C/C++/Go/Rust
-
-## Useful Links
-
-- [A Tour of Go](https://tour.golang.org/welcome/1)
-- [The Rust Programming Language](https://doc.rust-lang.org/book/index.html)
 
 ## Requirements
 
@@ -32,18 +27,15 @@ As long as the program is running it should continue to emit requests with a per
 
 Packet loss and latency should be reported as each message received.
 
-## Submitting your project
+## How to use
 
-When submitting your project, you should prepare your code for upload to Greenhouse. The preferred method for doing this is to create a "ZIP archive" of your project folder: for more instructions on how to do this on Windows and Mac, see [this guide](https://www.sweetwater.com/sweetcare/articles/how-to-zip-and-unzip-files/).
+### 1. Clone repo
 
-Please provide the source code only, a compiled binary is not necessary.
+### 2. Run makefile
 
-## Using Libraries
+### 3. Execute 
+#### `$sudo ./ping ipv4addr` 
+#### `$sudo ./ping hostname`
 
-You may use libraries (both built-in and installed via package managers) and system calls as necessary. Please don't use the ping built-in application or a full library implementation of ping.
-
-## Extra Credit
-
-1. Add support for both IPv4 and IPv6
-2. Allow to set TTL as an argument and report the corresponding "time exceeded” ICMP messages
-3. Any additional features listed in the ping man page or which you think would be valuable
+### 4. To exit
+#### hold `Ctrl` and `c` to interrupt 
